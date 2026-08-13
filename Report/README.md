@@ -30,7 +30,7 @@ This appendix contains the supporting evidence collected during the installation
 
 Successful startup of Splunk Enterprise on the Ubuntu virtual machine. The terminal output confirms that the Splunk web service became available on TCP port `8000`.
 
-![Figure A1 - Splunk Enterprise Setup](evidence/SplunkSetup.png)
+![Figure A1 - Splunk Enterprise Setup](../Evidence/SplunkSetup.png)
 
 
 
@@ -38,7 +38,7 @@ Successful startup of Splunk Enterprise on the Ubuntu virtual machine. The termi
 
 Verification of the downloaded `botsv3_data_set.tgz` archive against the MD5 checksum published by Splunk. The result of `botsv3_data_set.tgz: OK` confirms that the downloaded archive matched the expected checksum prior to extraction.
 
-![Figure A2 - BOTSv3 Dataset Integrity Verification](evidence/ConfirmBotnet.png)
+![Figure A2 - BOTSv3 Dataset Integrity Verification](../Evidence/ConfirmBotnet.png)
 
 
 
@@ -46,7 +46,7 @@ Verification of the downloaded `botsv3_data_set.tgz` archive against the MD5 che
 
 Splunk search used to validate that the BOTSv3 dataset had been successfully loaded. The search returned approximately **1.94 million events across 107 sourcetypes**, confirming that the index was available for investigation.
 
-![Figure A3 - BOTSv3 Dataset Validation](evidence/BotsValidation.png)
+![Figure A3 - BOTSv3 Dataset Validation](../Evidence/BotsValidation.png)
 
 
 
@@ -54,7 +54,7 @@ Splunk search used to validate that the BOTSv3 dataset had been successfully loa
 
 Splunk results showing the first occurrence of processes reaching 100% CPU utilisation after excluding the `Idle` and `_Total` performance counters. The results identify `chrome#5` as the second process to reach 100% CPU utilisation.
 
-![Figure A4 - Question 1 Processor Utilisation](evidence/Q1Proof.png)
+![Figure A4 - Question 1 Processor Utilisation](../Evidence/Q1Proof.png)
 
 
 
@@ -62,7 +62,7 @@ Splunk results showing the first occurrence of processes reaching 100% CPU utili
 
 DNS telemetry showing CoinHive-related activity. The results were correlated with the processor-utilisation findings from Question 1 to identify `BSTOLL-L` as the endpoint showing evidence of successful cryptocurrency-mining activity.
 
-![Figure A5 - Question 2 Cryptocurrency Mining Endpoint](evidence/Q2Proof.png)
+![Figure A5 - Question 2 Cryptocurrency Mining Endpoint](../Evidence/Q2Proof.png)
 
 
 
@@ -72,7 +72,7 @@ Splunk analysis of Symantec Endpoint Protection telemetry using the `first()` ev
 
 This single result provides evidence for both **Question 3** and **Question 4**.
 
-![Figure A6 - Questions 3 and 4 SEP Signature](evidence/Q3and4Proof.png)
+![Figure A6 - Questions 3 and 4 SEP Signature](../Evidence/Q3and4Proof.png)
 
 
 
@@ -80,7 +80,7 @@ This single result provides evidence for both **Question 3** and **Question 4**.
 
 Official Broadcom/Symantec security-update information showing `Web Attack: JSCoinminer Download 8` with a vendor-assigned severity of **Medium**.
 
-![Figure A7 - Question 5 Threat Severity](evidence/Q5Proof.png)
+![Figure A7 - Question 5 Threat Severity](../Evidence/Q5Proof.png)
 
 
 
@@ -88,4 +88,4 @@ Official Broadcom/Symantec security-update information showing `Web Attack: JSCo
 
 Symantec Endpoint Protection results showing **23 blocked events** associated with signature `30358` on endpoint `BTUN-L`. The result explicitly records the action as `attack blocked`, providing evidence that the endpoint-security control successfully prevented the cryptocurrency-mining threat.
 
-![Figure A8 - Question 6 Threat Prevention](evidence/Q6Proof.png)
+![Figure A8 - Question 6 Threat Prevention](../Evidence/Q6Proof.png)
