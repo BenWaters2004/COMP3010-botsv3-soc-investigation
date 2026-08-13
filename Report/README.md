@@ -314,6 +314,21 @@ This result demonstrates the important distinction between detecting an attack a
 `BSTOLL-L` showed evidence consistent with successful mining, whereas the SEP telemetry from `BTUN-L` explicitly recorded that the attack had been blocked. A SOC analyst must therefore examine the action taken by a security product rather than assuming every detection represents a successful compromise.
 
 ## 5. Conclusion
+The BOTSv3 investigation demonstrated how different forms of security telemetry can be combined to reconstruct a security incident.
+
+Windows performance data initially identified abnormal browser behaviour. `chrome#5` was the second process observed reaching 100% CPU utilisation. DNS telemetry then identified communication associated with cryptocurrency-mining infrastructure. Correlation of these data sources identified `BSTOLL-L` as the endpoint showing evidence that mining had actually occurred.
+
+SEP telemetry identified signature `30358`, corresponding to **Web Attack: JSCoinminer Download 8**, which Broadcom classified as Medium severity. Analysis of a second endpoint, `BTUN-L`, produced 23 SEP events explicitly recording that the attack had been blocked.
+
+The strongest lesson from the investigation is that individual indicators should not be interpreted in isolation. High CPU utilisation can have legitimate causes and DNS activity alone does not establish successful compromise. Correlation between endpoint, network and endpoint-security telemetry provided a much stronger incident narrative.
+
+In a production SOC, the findings would justify containment and investigation of affected systems, threat hunting for related indicators, review of endpoint-security controls and development of additional monitoring rules. A particularly useful improvement would be detection logic that combines sustained browser CPU utilisation with communication to known cryptocurrency-mining infrastructure.
+
+The investigation also demonstrated the importance of validating the outcome of security controls. Detecting a threat is different from confirming compromise: `BTUN-L` showed that the same type of threat could be encountered but successfully prevented.
+
+Overall, the exercise demonstrates how structured investigation, telemetry correlation and post-incident learning contribute to effective SOC operations.
+
+
 ## 6. Video Presentation
 
 ## 7. References
