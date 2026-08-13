@@ -48,6 +48,65 @@ This highlights an important SOC principle: an investigation should not finish w
 
 ## 3. Installation & Data Preparation
 
+### 3.1 Splunk Environment
+
+Splunk Enterprise was installed on an Ubuntu virtual machine. A dedicated Linux account named `splunk` was used to run the service rather than continuously operating Splunk as `root`. This reduced unnecessary application privileges and provided a more appropriate configuration for a security-monitoring platform.
+
+Splunk Web was made available on TCP port `8000`. Successful startup of the service is shown in **Appendix A, Figure A1**.
+
+### 3.2 BOTSv3 Dataset Installation
+
+The BOTSv3 dataset was downloaded from the official Splunk GitHub repository (Splunk, 2018). The download was supplied as a pre-indexed archive:
+
+```text
+botsv3_data_set.tgz
+```
+
+The published MD5 checksum was:
+
+```text
+d7ccca99a01cff070dff3c139cdc10eb
+```
+
+The archive was checked before extraction using:
+
+```bash
+echo "d7ccca99a01cff070dff3c139cdc10eb  botsv3_data_set.tgz" | md5sum -c -
+```
+
+A successful integrity check returned:
+
+```text
+botsv3_data_set.tgz: OK
+```
+
+The dataset was then extracted into:
+
+```text
+/opt/splunk/etc/apps/
+```
+
+During the initial configuration, Splunk reported that the BOTSv3 index was on an unusable filesystem. Investigation showed that the dataset had been extracted using elevated privileges while Splunk itself was operating under the dedicated `splunk` account. Correcting ownership of the BOTSv3 directory allowed Splunk to validate and start successfully.
+
+### 3.3 Dataset Validation
+
+The following search was used to verify that the dataset could be queried:
+
+```spl
+index=botsv3 earliest=0
+| stats count by sourcetype
+| sort - count
+```
+
+The result contained approximately **1.94 million events across 107 sourcetypes**, confirming that the pre-indexed BOTSv3 data was available for analysis. Evidence of this validation is provided in **Appendix A, Figure A2**.
+
+The original BOTSv3 environment used historical Splunk add-ons to provide automatic search-time field extraction (Splunk, 2018). These versions were not immediately available because access to Splunkbase required account activation.
+
+Rather than delay the investigation, fields already available within Splunk were used where possible. For SEP events, values contained within `_raw` were extracted using `rex`.
+
+This represents a limitation because manually extracted fields are less standardised than those provided by the original add-ons. However, the underlying event evidence remained available and could still be queried directly.
+
+
 ## 4. Guided Investigation
 | Question | Finding |
 |---|---|
