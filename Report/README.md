@@ -19,6 +19,27 @@ The investigation was conducted entirely against the historical BOTSv3 dataset. 
 Where the historical Splunk add-ons used when BOTSv3 was originally created were unavailable, fields were extracted directly from the raw event data using SPL. Results were therefore based on the underlying dataset rather than assumptions about automatically parsed fields.
 
 ## 2. SOC Roles & Incident Handling Reflection
+SOC responsibilities are commonly divided according to analyst experience and incident complexity. A Tier 1 analyst typically performs initial triage by validating alerts, gathering contextual information and deciding whether suspicious activity requires escalation. Tier 2 analysts perform deeper technical analysis and correlate multiple telemetry sources, while senior analysts or incident responders may coordinate containment, eradication and recovery.
+
+The BOTSv3 investigation reflects this escalation model. A browser process reaching 100% processor utilisation is anomalous but does not independently demonstrate compromise. Legitimate software can also consume substantial CPU resources. At a Tier 1 level this should therefore be treated as an indicator requiring further investigation rather than proof of malicious activity.
+
+The finding becomes more significant once processor data is correlated with network telemetry showing communication associated with cryptocurrency-mining infrastructure. Multiple independent indicators supporting the same hypothesis provide a stronger basis for escalation.
+
+The investigation also demonstrates the wider incident-response lifecycle described by NIST, in which preparation and detection are connected to response, recovery and subsequent improvement of defensive capabilities (NIST, 2025).
+
+### Prevention
+
+SEP logs on `BTUN-L` explicitly recorded that the JSCoinminer activity was blocked. This demonstrates the successful operation of a preventative endpoint-security control.
+
+### Detection
+
+Windows performance counters, DNS telemetry and SEP events provided independent sources of evidence that could be correlated to identify suspicious behaviour.
+
+### Response
+
+In a production environment, appropriate response actions could include isolating affected systems, terminating unwanted processes, identifying the source of the mining code and searching other endpoints for matching indicators.
+
+
 ## 3. Installation & Data Preparation
 
 ## 4. Guided Investigation
