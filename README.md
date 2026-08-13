@@ -10,4 +10,4 @@ Dataset Version 3.
 - [x] BOTSv3 dataset validated
 - [x] Guided questions completed
 - [x] Incident report completed
-- [ ] Video walkthrough published
+- [x] Video walkthrough published https://youtu.be/4X7NERiPQ_Q

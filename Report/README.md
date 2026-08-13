@@ -1,5 +1,24 @@
 # BOTSv3 Security Investigation
 
+## Table of Contents
+
+- [1. Introduction](#1-introduction)
+- [2. SOC Roles and Incident Handling Reflection](#2-soc-roles-and-incident-handling-reflection)
+- [3. Installation and Data Preparation](#3-installation-and-data-preparation)
+- [4. Guided Investigation](#4-guided-investigation)
+  - [4.1 Question 1 – Processor Utilisation](#41-question-1--processor-utilisation)
+  - [4.2 Question 2 – Cryptocurrency Mining Endpoint](#42-question-2--cryptocurrency-mining-endpoint)
+  - [4.3 Question 3 – Coin Miner Signature ID](#43-question-3--coin-miner-signature-id)
+  - [4.4 Question 4 – Attack Name](#44-question-4--attack-name)
+  - [4.5 Question 5 – Threat Severity](#45-question-5--threat-severity)
+  - [4.6 Question 6 – Endpoint That Defeated the Threat](#46-question-6--endpoint-that-defeated-the-threat)
+- [5. Conclusion](#5-conclusion)
+- [6. Video Presentation](#6-video-presentation)
+- [7. References](#7-references)
+- [Appendix A – Investigation Evidence](#appendix-a--investigation-evidence)
+- [Appendix B – Generative AI Declaration](#appendix-b--generative-ai-declaration)
+
+
 ## 1. Introduction
 A Security Operations Centre (SOC) is responsible for monitoring organisational systems, identifying suspicious activity and coordinating the investigation and response to cybersecurity incidents. Effective SOC analysis requires evidence from different sources to be correlated before conclusions are reached.
 
@@ -330,6 +349,7 @@ Overall, the exercise demonstrates how structured investigation, telemetry corre
 
 
 ## 6. Video Presentation
+https://youtu.be/4X7NERiPQ_Q
 
 ## 7. References
 Bianco, D. (2024) Hypothesis-driven cryptominer hunting with Peak, Splunk. Available at: https://www.splunk.com/en_us/blog/security/hypothesis-driven-cryptominer-hunting-with-peak.html (Accessed: 11 August 2026). 
