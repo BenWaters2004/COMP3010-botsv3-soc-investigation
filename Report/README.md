@@ -1,8 +1,26 @@
 # BOTSv3 Security Investigation
 
 ## 1. Introduction
+A Security Operations Centre (SOC) is responsible for monitoring organisational systems, identifying suspicious activity and coordinating the investigation and response to cybersecurity incidents. Effective SOC analysis requires evidence from different sources to be correlated before conclusions are reached.
+
+This investigation uses Splunk's **Boss of the SOC Version 3 (BOTSv3)** dataset. BOTSv3 is a publicly available, pre-indexed security dataset based around a fictional brewing company named **Frothly**. It contains realistic security telemetry from endpoint, network, cloud and security products and is designed to support practical security investigation exercises (Splunk, 2018).
+
+The objective of this investigation was to examine evidence of browser-based cryptocurrency mining within the Frothly environment using Splunk Search Processing Language (SPL). The investigation was restricted to the supplied 200-level question set and concentrated on processor utilisation, DNS activity and Symantec Endpoint Protection (SEP) telemetry.
+
+The investigation produced two important endpoint findings:
+
+- `BSTOLL-L` showed evidence consistent with successful cryptocurrency-mining activity.
+- `BTUN-L` encountered the JSCoinminer threat, but SEP recorded that the activity was successfully blocked.
+
+### 1.1 Scope and Assumptions
+
+The investigation was conducted entirely against the historical BOTSv3 dataset. No live Frothly systems were accessed and no active containment actions were performed.
+
+Where the historical Splunk add-ons used when BOTSv3 was originally created were unavailable, fields were extracted directly from the raw event data using SPL. Results were therefore based on the underlying dataset rather than assumptions about automatically parsed fields.
+
 ## 2. SOC Roles & Incident Handling Reflection
 ## 3. Installation & Data Preparation
+
 ## 4. Guided Investigation
 | Question | Finding |
 |---|---|
