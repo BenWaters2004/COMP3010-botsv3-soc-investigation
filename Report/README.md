@@ -39,6 +39,12 @@ Windows performance counters, DNS telemetry and SEP events provided independent 
 
 In a production environment, appropriate response actions could include isolating affected systems, terminating unwanted processes, identifying the source of the mining code and searching other endpoints for matching indicators.
 
+### Recovery and Improvement
+
+Recovery would involve confirming removal of the unwanted activity and returning affected systems to normal operation. Lessons from the investigation should then inform new detections, for example sustained browser CPU utilisation combined with communication to known cryptocurrency-mining infrastructure.
+
+This highlights an important SOC principle: an investigation should not finish when an indicator has been identified. Findings should contribute to improved prevention and detection.
+
 
 ## 3. Installation & Data Preparation
 
@@ -262,6 +268,7 @@ Splunk (no date) Splunk/botsv3: Splunk boss of the SOC version 3 dataset., GitHu
 
 Nelson, A. et al. (2025) Incident response recommendations and considerations for Cybersecurity Risk Management: A CSF 2.0 community profile, CSRC. Available at: https://csrc.nist.gov/pubs/sp/800/61/r3/final (Accessed: 13 August 2026). 
 
+Identifying proficiency: Nice framework work roles & levels of responsibility (2026) NIST. Available at: https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/identifying-proficiency-nice-framework (Accessed: 13 August 2026). 
 
 ## Appendix A – Investigation Evidence
 
