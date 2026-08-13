@@ -6,8 +6,8 @@ Dataset Version 3.
 
 ## Investigation status
 
-- [ ] Splunk environment prepared
-- [ ] BOTSv3 dataset validated
+- [x] Splunk environment prepared
+- [x] BOTSv3 dataset validated
 - [ ] Guided questions completed
 - [ ] Incident report completed
 - [ ] Video walkthrough published
