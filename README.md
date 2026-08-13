@@ -8,6 +8,6 @@ Dataset Version 3.
 
 - [x] Splunk environment prepared
 - [x] BOTSv3 dataset validated
-- [ ] Guided questions completed
+- [x] Guided questions completed
 - [ ] Incident report completed
 - [ ] Video walkthrough published
